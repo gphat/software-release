@@ -1,0 +1,36 @@
+# NAME
+
+Software::Release - Object representing a release of software.
+
+# VERSION
+
+version 0.01
+
+# ATTRIBUTES
+
+## changes
+
+A list of [Software::Release::Change](http://search.cpan.org/perldoc?Software::Release::Change) objects for this release.
+
+## date
+
+The date this software was released.
+
+## name
+
+The name of this release.
+
+## version
+
+The version of the release, as a string.
+
+# AUTHOR
+
+Cory G Watson <gphat@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Infinity Interactive, Inc.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
