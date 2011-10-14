@@ -6,7 +6,8 @@ use Software::Release;
 use Software::Release::Change;
 
 my $change = Software::Release::Change->new(
-    author => 'gphat',
+    author_name => 'gphat',
+    author_email => 'gphat@cpan.org',
     change_id => 'abc1234',
     date => DateTime->now,
     description => 'Frozzle the wozjob'

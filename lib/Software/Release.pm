@@ -3,9 +3,46 @@ use Moose;
 
 # ABSTRACT: Object representing a release of software.
 
+=head1 SYNOPSIS
+
+    use DateTime;
+    use Software::Release;
+    use Software::Release::Change;
+
+    my $change = Software::Release::Change->new(
+        author => 'gphat',
+        change_id => 'abc1234',
+        date => DateTime->now,
+        description => 'Frozzled the wozjob'
+    );
+
+    my $rel = Software::Release->new(
+        version => '0.1',
+        name => 'Angry Anteater',
+        date => DateTime->now,
+    );
+
+    $rel->add_to_changes($change);
+
+=head1 DESCRIPTION
+
+Software::Release is a purely informational collection of objects that you
+can use to represent a release of software.  It's original use-case was to
+provide a contract between a git log parser and a formatter class that output
+a changelog, but it may be useful to others create bug trackers, dashboards
+or whathaveyour.
+
 =attr changes
 
 A list of L<Software::Release::Change> objects for this release.
+
+=method add_to_changes ($change)
+
+Add a change to this release's list of changes.
+
+=method has_no_changes
+
+Returns true if this release's list of changes is empty.
 
 =cut
 
@@ -16,6 +53,7 @@ has changes => (
     default => sub { [] },
     handles => {
         add_to_changes => 'push',
+        has_no_changes => 'is_empty'
     }
 );
 
@@ -50,7 +88,6 @@ The version of the release, as a string.
 has version => (
     is => 'rw',
     isa => 'Str',
-    required => 1,
 );
 
 __PACKAGE__->meta->make_immutable;
