@@ -4,7 +4,7 @@ Software::Release - Object representing a release of software.
 
 # VERSION
 
-version 0.01
+version 0.02
 
 # SYNOPSIS
 
