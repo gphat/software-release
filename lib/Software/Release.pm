@@ -30,7 +30,7 @@ Software::Release is a purely informational collection of objects that you
 can use to represent a release of software.  Its original use-case was to
 provide a contract between a git log parser and a formatter class that outputs
 a changelog, but it may be useful to others to create bug trackers, dashboards
-or whathaveyour.
+or whathaveyou.
 
 =attr changes
 
